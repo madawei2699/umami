@@ -18,8 +18,39 @@ import { getUser } from '../queries';
 
 const log = debug('umami:middleware');
 
+const whitelist = [
+  'https://umami.bmpi.dev',
+  'https://www.bmpi.dev',
+  'https://feed.bmpi.dev',
+  'https://money.bmpi.dev',
+  'https://www.myinvestpilot.com',
+  'https://www.myinvestpilot.com/',
+  'https://www.free4.chat',
+  'https://dev-notes.free4.chat',
+  'https://www.myreader.io',
+  'https://www.myreader.io/',
+  'https://www.chat2invest.com',
+  'https://www.chat2invest.com/',
+  'https://www.mywriter.ink',
+  'https://www.mywriter.ink/',
+  'https://www.i365.tech',
+  'https://www.i365.tech/',
+];
+const corsOptions = {
+  origin: function (origin, callback) {
+    // eslint-disable-next-line no-console
+    console.info(origin);
+    if (origin === undefined || whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error(origin + ' is not allowed by CORS whitelist'));
+    }
+  },
+};
+
 export const useCors = createMiddleware(
   cors({
+    ...corsOptions,
     // Cache CORS preflight request 24 hours by default
     maxAge: Number(process.env.CORS_MAX_AGE) || 86400,
   }),
