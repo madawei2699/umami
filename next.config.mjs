@@ -47,6 +47,27 @@ if (forceSSL) {
   });
 }
 
+const allowedOrigins = [
+  'https://umami.bmpi.dev',
+  'https://www.bmpi.dev',
+  'https://feed.bmpi.dev',
+  'https://money.bmpi.dev',
+  'https://www.myinvestpilot.com',
+  'https://www.myinvestpilot.com/',
+  'https://docs.myinvestpilot.com',
+  'https://docs.myinvestpilot.com/',
+  'https://www.free4.chat',
+  'https://dev-notes.free4.chat',
+  'https://www.myreader.io',
+  'https://www.myreader.io/',
+  'https://www.chat2invest.com',
+  'https://www.chat2invest.com/',
+  'https://www.mywriter.ink',
+  'https://www.mywriter.ink/',
+  'https://www.i365.tech',
+  'https://www.i365.tech/',
+];
+
 const trackerHeaders = [
   {
     key: 'Access-Control-Allow-Origin',
