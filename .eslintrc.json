@@ -15,18 +15,16 @@
     "sourceType": "module"
   },
   "extends": [
+    "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "eslint:recommended",
-    "plugin:prettier/recommended",
     "plugin:import/errors",
     "plugin:import/typescript",
     "plugin:css-modules/recommended",
-    "plugin:cypress/recommended",
-    "prettier",
-    "next"
+    "next/core-web-vitals",
+    "plugin:prettier/recommended"
   ],
-  "plugins": ["@typescript-eslint", "prettier", "promise", "css-modules", "cypress"],
+  "plugins": ["@typescript-eslint", "promise", "css-modules"],
   "rules": {
     "no-console": "error",
     "react/display-name": "off",
