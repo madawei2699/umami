@@ -66,6 +66,10 @@ const allowedOrigins = [
   'https://www.mywriter.ink/',
   'https://www.i365.tech',
   'https://www.i365.tech/',
+  'https://www.myminepilot.com',
+  'https://www.myminepilot.com/',
+  'https://www.mymediapilot.com',
+  'https://www.mymediapilot.com/',
 ];
 
 const trackerHeaders = [
